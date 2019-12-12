@@ -54,7 +54,8 @@
     "vscode-test": "^1.2.2"
   },
   "dependencies": {
-    "test-grammar": "^1.0.1",
+    "@sorg/log": "^1.0.3",
+    "test-grammar": "^1.0.2",
     "tslib": "^1.10.0"
   }
 }
