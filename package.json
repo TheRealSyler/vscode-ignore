@@ -1,0 +1,60 @@
+{
+  "name": "gitignore",
+  "displayName": "gitignore",
+  "description": "Adds gitignore syntax highlighting and autocompletion",
+  "version": "0.0.1",
+  "publisher": "syler",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheRealSyler/gitignore"
+  },
+  "engines": {
+    "vscode": "^1.40.0"
+  },
+  "activationEvents": [
+    "onLanguage:gitignore"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "ts-node src/test/test.ts",
+    "test:dev": "nodemon src/test/test.ts"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "gitignore",
+        "aliases": [
+          "Git Ignore",
+          "gitignore"
+        ],
+        "extensions": [
+          ".gitignore"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gitignore",
+        "scopeName": "source.gitignore",
+        "path": "./syntaxes/gitignore.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.40.0",
+    "typescript": "^3.6.4",
+    "vscode-test": "^1.2.2"
+  },
+  "dependencies": {
+    "test-grammar": "^1.0.1",
+    "tslib": "^1.10.0"
+  }
+}
