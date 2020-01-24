@@ -2,7 +2,8 @@
   "name": "ignore",
   "displayName": "Ignore",
   "description": "Adds syntax highlighting and autocompletion for all ignore files",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "icon": "resources/images/icon.png",
   "publisher": "Syler",
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
     "Programming Languages"
   ],
   "scripts": {
-    "vscode:prepublish": "npm run updateTemplates && npm run build && suf",
+    "vscode:prepublish": "npm run updateTemplates && npm run build && suf && npm run test",
     "build": "webpack --mode production",
     "updateTemplates": "ts-node src/template/template.update.ts",
     "watch": "webpack --mode development",

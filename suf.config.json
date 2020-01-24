@@ -4,7 +4,8 @@
     "github": "TheRealSyler",
     "repo": "vscode-ignore",
     "out": "README.md",
-    "vscode": "Syler.ignore",
+    "icon": "resources/images/icon.ico",
+    "vscode": "syler.ignore",
     "badges": [
       "circleci circleci",
       "vscV vscode",
