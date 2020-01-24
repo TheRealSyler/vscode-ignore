@@ -1,0 +1,24 @@
+{
+  "badges": {
+    "name": "ignore",
+    "github": "TheRealSyler",
+    "repo": "ignore",
+    "out": "README.md",
+    "vscode": "syler.ignore",
+    "badges": [
+      "circleci circleci",
+      "vscV vscode",
+      "vscD vscode",
+      "vscI vscode",
+      "githubLastCommit github",
+      "githubIssues github ?color=lightgrey"
+    ]
+  },
+  "license": {
+    "name": "Leonard Grosoli",
+    "type": "mit",
+    "year": "2020",
+    "out": "README.md",
+    "file": "LICENSE"
+  }
+}

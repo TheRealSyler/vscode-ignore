@@ -1,9 +1,3 @@
-# Change Log
-
-All notable changes to the "gitignore" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+| Date      | Message         |
+| --------- | --------------- |
+| 24.1.2020 | Initial Release |

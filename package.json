@@ -1,9 +1,9 @@
 {
-  "name": "gitignore",
-  "displayName": "gitignore",
-  "description": "Adds gitignore syntax highlighting and autocompletion",
+  "name": "ignore",
+  "displayName": "Ignore",
+  "description": "Adds syntax highlighting and autocompletion for all ignore files",
   "version": "0.0.1",
-  "publisher": "syler",
+  "publisher": "Syler",
   "repository": {
     "type": "git",
     "url": "https://github.com/TheRealSyler/gitignore"
@@ -12,23 +12,31 @@
     "vscode": "^1.40.0"
   },
   "activationEvents": [
-    "onLanguage:gitignore"
+    "onLanguage:ignore"
   ],
   "categories": [
     "Programming Languages"
   ],
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run updateTemplates && npm run build && suf",
+    "build": "webpack --mode production",
+    "updateTemplates": "ts-node src/template/template.update.ts",
+    "watch": "webpack --mode development",
     "test": "ts-node src/test/test.ts",
     "test:dev": "nodemon src/test/test.ts"
   },
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "ignore.choose-template.git",
+        "category": "Ignore",
+        "title": "Choose Git Ignore Template"
+      }
+    ],
     "languages": [
       {
-        "id": "gitignore",
+        "id": "ignore",
         "aliases": [
           "Git Ignore",
           "gitignore"
@@ -41,21 +49,26 @@
     ],
     "grammars": [
       {
-        "language": "gitignore",
-        "scopeName": "source.gitignore",
-        "path": "./syntaxes/gitignore.tmLanguage.json"
+        "language": "ignore",
+        "scopeName": "source.ignore",
+        "path": "./syntaxes/ignore.tmLanguage.json"
       }
     ]
   },
   "devDependencies": {
     "@types/node": "^12.11.7",
     "@types/vscode": "^1.40.0",
+    "suf-cli": "^0.1.0",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.5.4",
+    "tslib": "^1.10.0",
     "typescript": "^3.6.4",
-    "vscode-test": "^1.2.2"
+    "vscode-test": "^1.2.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "@sorg/log": "^1.0.3",
-    "test-grammar": "^1.0.2",
-    "tslib": "^1.10.0"
+    "test-grammar": "^1.0.2"
   }
 }
