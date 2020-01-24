@@ -1,6 +1,6 @@
 import { TestGrammar } from 'test-grammar';
 
-new TestGrammar('./syntaxes/gitignore.tmLanguage.json', {}, run => {
+new TestGrammar('syntaxes/gitignore.tmLanguage.json', null, run => {
   const comment = 'comment.line';
   const path = 'support.type.property-name.path';
   const special = 'keyword.control.escape.special';

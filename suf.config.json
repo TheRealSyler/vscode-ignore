@@ -1,8 +1,8 @@
 {
   "badges": {
-    "name": "ignore",
+    "name": "vscode-ignore",
     "github": "TheRealSyler",
-    "repo": "ignore",
+    "repo": "vscode-ignore",
     "out": "README.md",
     "vscode": "syler.ignore",
     "badges": [
