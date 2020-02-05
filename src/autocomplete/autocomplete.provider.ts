@@ -7,7 +7,7 @@ import {
   Range,
   CompletionItemKind
 } from 'vscode';
-import { resolve, basename } from 'path';
+import { resolve, basename, normalize, join } from 'path';
 import { promises, statSync, existsSync } from 'fs';
 export class GitIgnoreCompletions implements CompletionItemProvider {
   context: ExtensionContext;
@@ -17,21 +17,24 @@ export class GitIgnoreCompletions implements CompletionItemProvider {
   async provideCompletionItems(document: TextDocument, position: Position) {
     const start = new Position(position.line, 0);
     const range = new Range(start, position);
-    const currentWord = document.getText(range).trim();
+    const currentWord = document
+      .getText(range)
+      .replace(/^(\/|\.)/, '')
+      .trim();
 
-    const path = resolve(document.uri.path, '../', currentWord.replace(/^\//, ''));
+    const path = resolve(document.uri.path, '../', currentWord, currentWord ? '../' : '');
+    console.log(path);
     if (!existsSync(path)) {
+      console.log("[vscode-ignore]: Exited autocomplete, path doesn't exist.");
       return [];
     }
     const dir = statSync(path).isDirectory() ? path : resolve(document.uri.path, '../');
-
     const files = await promises.readdir(dir);
-
     const completions: CompletionItem[] = [];
 
     for (let i = 0; i < files.length; i++) {
       const fileName = files[i];
-      if (fileName === basename(document.fileName)) {
+      if (fileName === basename(document.fileName) || fileName.startsWith('.')) {
         continue;
       }
       try {
@@ -54,7 +57,6 @@ export class GitIgnoreCompletions implements CompletionItemProvider {
         console.log(`[ignore]: Autocomplete, ${fileName} Failed`);
       }
     }
-
     return completions;
   }
 }

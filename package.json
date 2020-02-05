@@ -2,7 +2,7 @@
   "name": "ignore",
   "displayName": "Ignore",
   "description": "Adds syntax highlighting and autocompletion for all ignore files",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "icon": "resources/images/icon.png",
   "publisher": "Syler",
   "repository": {

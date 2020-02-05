@@ -39,7 +39,7 @@ export function activate(context: ExtensionContext) {
         { language: 'ignore', scheme: 'untitled' }
       ],
       new GitIgnoreCompletions(context),
-      '.',
+      '\\.',
       '/'
     )
   );
