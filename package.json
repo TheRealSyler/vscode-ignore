@@ -7,7 +7,7 @@
   "publisher": "Syler",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TheRealSyler/gitignore"
+    "url": "https://github.com/TheRealSyler/vscode-ignore"
   },
   "engines": {
     "vscode": "^1.40.0"
