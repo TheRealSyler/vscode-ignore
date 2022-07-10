@@ -2,7 +2,7 @@
   "name": "ignore",
   "displayName": "Ignore",
   "description": "Adds syntax highlighting and autocompletion for all ignore files",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "icon": "resources/images/icon.png",
   "publisher": "Syler",
   "repository": {
@@ -10,7 +10,7 @@
     "url": "https://github.com/TheRealSyler/vscode-ignore"
   },
   "engines": {
-    "vscode": "^1.40.0"
+    "vscode": "^1.69.0"
   },
   "activationEvents": [
     "onLanguage:ignore"
@@ -58,13 +58,13 @@
   },
   "devDependencies": {
     "@types/node": "^12.11.7",
-    "@types/vscode": "^1.40.0",
+    "@types/vscode": "^1.69.0",
     "suf-cli": "^0.1.0",
     "ts-loader": "^6.2.1",
     "ts-node": "^10.8.2",
     "tslib": "^1.10.0",
-    "typescript": "^3.6.4",
-    "vscode-test": "^1.2.2",
+    "typescript": "^4.7.4",
+    "vscode-test": "^1.6.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
