@@ -1,13 +1,8 @@
-import { GitIgnoreCompletions } from './autocomplete/autocomplete.provider';
 import {
-  ExtensionContext,
-  commands,
-  window,
-  languages,
-  Position,
-  WorkspaceEdit,
-  workspace
+  commands, ExtensionContext, languages,
+  Position, window, workspace, WorkspaceEdit
 } from 'vscode';
+import { GitIgnoreCompletions } from './autocomplete/autocomplete.provider';
 
 export function activate(context: ExtensionContext) {
   context.subscriptions.push(
@@ -39,10 +34,10 @@ export function activate(context: ExtensionContext) {
         { language: 'ignore', scheme: 'untitled' }
       ],
       new GitIgnoreCompletions(context),
-      '\\.',
+      '.',
       '/'
     )
   );
 }
 
-export function deactivate() {}
+export function deactivate() { }
