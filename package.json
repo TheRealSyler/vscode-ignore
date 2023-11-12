@@ -2,7 +2,7 @@
   "name": "ignore",
   "displayName": "Ignore",
   "description": "Adds syntax highlighting and autocompletion for all ignore files",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "icon": "resources/images/icon.png",
   "publisher": "Syler",
   "repository": {
@@ -12,17 +12,15 @@
   "engines": {
     "vscode": "^1.69.0"
   },
-  "activationEvents": [
-    "onLanguage:ignore"
-  ],
+  "activationEvents": [],
   "categories": [
     "Programming Languages"
   ],
   "scripts": {
-    "vscode:prepublish": "npm run updateTemplates && npm run build && suf && npm run test",
-    "build": "webpack --mode production",
+    "vscode:prepublish": "npm run updateTemplates && npm run test && npm run build && suf",
+    "build": "del-cli ./dist/* && webpack --mode production",
     "updateTemplates": "ts-node src/template/template.update.ts",
-    "watch": "webpack --mode development",
+    "watch": "del-cli ./dist/* && tsc -w",
     "test": "ts-node src/test/test.ts",
     "test:dev": "nodemon src/test/test.ts"
   },
@@ -57,13 +55,17 @@
     ]
   },
   "devDependencies": {
+    "@hediet/node-reload": "^0.7.3",
+    "@hediet/std": "^0.6.0",
     "@types/node": "^12.11.7",
     "@types/vscode": "^1.69.0",
+    "@types/webpack": "^5.28.5",
+    "del-cli": "^5.1.0",
     "suf-cli": "^0.1.0",
     "ts-loader": "^6.2.1",
     "ts-node": "^10.8.2",
     "tslib": "^1.10.0",
-    "typescript": "^4.7.4",
+    "typescript": "^5.2.2",
     "vscode-test": "^1.6.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"

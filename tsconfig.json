@@ -2,22 +2,21 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
-    "outDir": "out",
+    "outDir": "dist",
     "lib": [
       "es6"
     ],
-    "sourceMap": true,
+    "rootDir": "src",
+    "skipLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "strict": true /* enable all strict type-checking options */
-    /* Additional Checks */
-    // "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-    // "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-    // "noUnusedParameters": true,  /* Report errors on unused parameters. */
+    "strict": true,
+    "noUncheckedIndexedAccess": true
   },
   "exclude": [
-    "node_modules",
+    "node_modules/*",
     ".vscode-test",
-    "src/test"
+    "src/test",
+    "webpack.config.ts"
   ]
 }
